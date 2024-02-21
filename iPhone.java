@@ -1,57 +1,58 @@
 package Interface;
 
-public class Samsung implements Phone {
+public class iPhone implements Phone {
+    
     private int volume;
     private boolean isPowerOn;
-
-    public void Samsung(){
+    
+    public void iPhone(){
         this.volume = 0;
     }
-
+    
+    public int getVolume(){
+        return this.volume;
+    }
+    
     @Override
-    public void powerOn() {
+    public void powerOn(){
         isPowerOn = true;
-        System.out.println("Samsung Patahan Apple");
-        System.out.println("Selamat Datang");
-        System.out.println("Android version 14");
+        System.out.println("iPhone, The New Phone Era");
+        System.out.println("Welcome To Apple Ecosystem");
+        System.out.println("iOS Version 17");
     }
-
+    
     @Override
-    public void powerOff() {
+    public void powerOff(){
         isPowerOn = false;
-        System.out.println("HP Mati");
+        System.out.println("The Phone is Off");
     }
-
+    
     @Override
-    public void volumeUp() {
+    public void volumeUp(){
         if (isPowerOn) {
             if (this.volume == MAX_VOLUME) {
-                System.out.println("Penuh");
+                System.out.println("The Volume is Max");
                 System.out.println(this.getVolume() + "%");
             } else {
                 this.volume += 10;
                 System.out.println("Volume : " + this.getVolume());
             }
         } else {
-            System.out.println("Turn On The Phone First!!");
+            System.out.println("The Phone Still Off");
         }
     }
-
+    
     @Override
-    public void volumeDown() {
+    public void volumeDown(){
         if (isPowerOn) {
             if (this.volume == MIN_VOLUME) {
-                System.out.println("Volume = 0%");
+                System.out.println("Volume : 0%");
             } else {
                 this.volume -= 10;
                 System.out.println("Volume : " + this.getVolume());
             }
         } else {
-            System.out.println("Nyalakan HP nya Dulu!!!");
+            System.out.println("Turn On The Phone First");
         }
-    }
-
-    public int getVolume() {
-        return this.volume;
     }
 }
